@@ -1,5 +1,5 @@
 html {
-    background-color:lightblue;
+    background-color:rgb(82, 96, 100);
     color: black;
     line-height: 1.8;
     font-family: 'Courier New', Courier, monospace;
@@ -7,4 +7,84 @@ html {
 }
 header{
     padding: 70px;
+    font-size: 28px;
+    color:white ;
+    font-weight: bolder;
 }
+#headerh1{
+    padding: 70px;
+    font-size:40px;
+    color:white ;
+    font-weight: bolder;
+    text-align: center; 
+    background-color: salmon;
+     
+}
+#salpic, img{
+    height: 300px;
+    width: 300px;
+    margin-left: 200px;
+}
+
+
+
+.column {
+    float: left;
+    
+    padding-left: 100px;
+    height: 300px;
+    width: 300px;
+  }
+  
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+#footerh2{
+    padding: 20px;
+    font-size:30px;
+    color:white ;
+    font-weight: bolder;
+    text-align: center; 
+    background-color: salmon;
+    margin-top: 300px;
+}
+
+  
+  table {
+    margin: 30px;
+    border: 30px salmon;
+    background-color: white;
+    box-shadow: 7px 7px 14px 14px rgb(180, 177, 177);
+  }
+
+    th, .locStyle {
+    padding: 20px;
+    background-color: salmon;
+    font-weight: bolder;
+    text-align: center;
+  }
+  tr{
+    padding: 20px;
+    background-color: salmon;
+    font-weight: bolder;
+    text-align: center; 
+  }
+  
+  tr, td {
+    padding: 20px;
+    background-color: rgb(191, 238, 250);
+    
+  }
+  tr:hover, td:hover {
+    background-color: rgb(243, 253, 155);
+  }
+
+  th:hover, tr:hover {
+    background-color: rgb(155, 253, 155);
+  }
+  
+ 
+ 
