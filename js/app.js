@@ -1,4 +1,3 @@
-'use strict';
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm',
 '4pm', '5pm', '6pm', '7pm'];
@@ -8,11 +7,13 @@ function SalmonCookies(loc, minCust, maxCust, avrg) {
     this.minCust = minCust,
     this.maxCust = maxCust,
     this.avrg = avrg;
-    SalmonCookies.allLocs.push(this);
-    this.totalPerHour = [];
+    SalmonCookie.push(this);
+    this.customerPerHour = [];
+    this.cookiesEachHour = [];
+    this.totalCookies = 0;
   }
 
-  SalmonCookies.allLocs = [];
+  let SalmonCookie = [];
   
   
  
@@ -23,17 +24,30 @@ function SalmonCookies(loc, minCust, maxCust, avrg) {
   let st5 = new SalmonCookies('Lima', 2, 16, 4.6);
   
   
-  SalmonCookies.prototype.showData = AddcookiesData;
+  SalmonCookies.prototype.showData = render;
   
-  var cookiesTable = document.getElementById('cookiesTable');
+  let cookiesTable = document.getElementById('cookiesTable');
   
 
-  function getAvrgCookies(location) {
+  function randomCustomer(location) {
     var randNum = Math.floor(Math.random() * (location.maxCust - location.minCust + 1) + location.minCust);
     var total = location.avrg * randNum;
     return Math.round(total);
   }
+
+  SalmonCookies.prototype.totalDailyCookies = function(){
+    for (let i = 0; i < hours.length; i++){
+   this.totalCookies += this.cookiesEachHour[i];
+    }
+   }
  
+   SalmonCookies.prototype.cookiesPerHour = function(){
+     for(let i = 0; i < hours.length; i++){
+     this.cookiesEachHour.push((Math.ceil(this.customerPerHour[i] * this.avrgCookies)));
+      }
+   }
+ 
+   function createTableHeader(){
   let timeRow = document.getElementById('times-row');
   
   for (let i = 0; i < hours.length; i++) {
@@ -43,23 +57,24 @@ function SalmonCookies(loc, minCust, maxCust, avrg) {
   }
   
   
-  var totalHeader = document.createElement('th');
-  totalHeader.textContent = 'Total';
+  let totalHeader = document.createElement('th');
+  totalHeader.textContent = 'Total Daily Cookies';
   timeRow.appendChild(totalHeader);
+}
+ createTableHeader();
   
-  
-  function AddcookiesData() {
-    var sum = 0;
-    var locationRow = document.getElementById('locations-and-data');
-    var locationName = document.createElement('tr');
+  function render() {
+    let sum = 0;
+    let locationRow = document.getElementById('locations-and-data');
+    let locationName = document.createElement('tr');
     locationName.textContent = this.loc;
-    locationName.className = 'column1';
+    locationName.className = 'locStyle';
   
     
     for (let i = 0; i < hours.length; i++) {
-      let averageCookies = getAvrgCookies(this);
+      let averageCookies = randomCustomer(this);
       sum += averageCookies;
-      this.totalPerHour.push(averageCookies);
+      this.cookiesEachHour.push(averageCookies);
       let locationData = document.createElement('td');
       locationData.textContent = averageCookies;
       locationName.appendChild(locationData);
@@ -70,7 +85,34 @@ function SalmonCookies(loc, minCust, maxCust, avrg) {
     showTotal.textContent = sum;
     locationName.appendChild(showTotal);
   }
+
+function createTableFooter (){
   
+
+    let TotalallCookiesPerHourAndLocation = 0;
+    let allCookiesPerHourAndLocation = 0;
+
+    let footerEl = document.createElement('tr');
+    cookiesTable.appendChild(footerEl);
+    let thEl1 = document.createElement('th');
+    footerEl.appendChild(thEl1);
+    thEl1.textContent = 'Total';
+    
+    for (let i = 0 ; i < hours.length ; i++) {
+        let tdEl2 = document.createElement('td');
+        for(let j = 0 ; j < SalmonCookie.length ; j++){
+            allCookiesPerHourAndLocation += SalmonCookie[j].cookiesEachHour[i]
+        }
+        footerEl.appendChild(tdEl2);
+        tdEl2.textContent = allCookiesPerHourAndLocation;
+        TotalallCookiesPerHourAndLocation += allCookiesPerHourAndLocation;
+        allCookiesPerHourAndLocation = 0;
+    }
+    let tableData5 = document.createElement('td');
+    footerEl.appendChild(tableData5);
+    tableData5.textContent = TotalallCookiesPerHourAndLocation;
+}
+
 
   st1.showData();
   st2.showData();
@@ -78,4 +120,4 @@ function SalmonCookies(loc, minCust, maxCust, avrg) {
   st4.showData();
   st5.showData();
  
-  
+  createTableFooter ()
