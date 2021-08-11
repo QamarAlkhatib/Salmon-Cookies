@@ -1,0 +1,33 @@
+html {
+background-color:lightblue;
+    color: black;
+    line-height: 1.8;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+header{
+    padding: 70px;
+    background-color:darkblue;
+    color: white;
+    font-weight: bolder;
+    font-size: 28px;
+    
+}
+
+div{
+    line-height: 2;
+    list-style-type:armenian;
+    padding-left: 50px;
+    
+    margin: 50px;
+}
+
+ul li{
+    list-style-type: disc;
+}
+
+h2{
+    font-size: 24px;
+    font-weight: bolder;
+    padding-top: 20px;
+}
