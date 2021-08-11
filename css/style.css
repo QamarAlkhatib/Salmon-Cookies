@@ -26,13 +26,12 @@ header{
     margin-left: 200px;
 }
 
+div:after {
+   content: "";
+   clear: both;
+   display: table;
+}
 
-
-  div:after {
-    content: "";
-    clear: both;
-    display: table;
-  }
 #footerh2{
     padding: 20px;
     font-size:30px;
@@ -49,13 +48,17 @@ header{
     border: 30px rgb(197, 76, 63);
     background-color: white;
     box-shadow: 7px 7px 14px 14px rgb(102, 100, 100);
+    margin-bottom: 100px;
+    border-collapse:inherit;
+	  border-spacing: 1px;
+    
   }
 
-    th, .locStyle {
-    padding: 20px;
-    background-color: rgb(197, 76, 63);
-    font-weight: bolder;
-    text-align: center;
+ th, .locStyle {
+ padding: 20px;
+ background-color: rgb(197, 76, 63);
+ font-weight: bolder;
+ text-align: center;
   }
   tr{
     padding: 20px;
@@ -113,3 +116,27 @@ main h2{
     display: block;
   }
 
+
+form {
+  width:450px;
+	padding:30px;
+	margin:40px auto;
+	background: #FFF;
+	border-radius: 10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+
+form legend{
+  background: rgb(94, 136, 146);
+  padding: 30px;
+  width: 100%;
+  margin: -30px -30px 30px -30px;
+	color: rgb(255, 255, 255);
+	border: 1px solid #005a7e;
+  text-align: center;
+  font-weight: bolder;
+}

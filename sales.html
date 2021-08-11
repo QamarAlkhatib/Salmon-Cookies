@@ -12,7 +12,11 @@
 </head>
 
 <body>
-  <header>Salmon Cookie's Sales per hour</header>
+
+  <header>Salmon Cookie's Sales per hour
+    <a style="font-size: 30px; color: aliceblue; float: right; font-weight: bolder; padding-right: 70px; margin-top: 40px;"
+      href="index.html">Visit Home Page</a>
+  </header>
 
   <div class="table-container">
     <table id="cookiesTable">
@@ -24,12 +28,33 @@
       <tbody id="locations-and-data">
       </tbody>
     </table>
-    <a style= "font-size: 30px; color: aliceblue; float: right; font-weight: bolder; padding-right: 70px; margin-top: 40px;" href="index.html">Visit Home Page</a> 
 
+    <form action="" id=myForm>
+      <fieldset>
+        <legend>Add New Store</legend>
+        <label for="storeloc">Store Location</label>
+        <input type="text" name="storeloc" id="storeloc" required />
+        <br></br>
+
+        <label for="maxorder">Max Order</label>
+        <input type="number" name="maxorder" id="maxorder" min="10" max="1000">
+        <br></br>
+
+        <label for="minorder">Min Order</label>
+        <input type="number" name="minorder" id="minorder" min="1" max="1000" />
+        <br></br>
+
+        <label for="avrgsale">Average Sales</label>
+        <input type="number" name="avrgsale" id="avrgsale" max="1000" min="1" />
+        <br></br>
+
+        <input type="submit" value="Submit">
+      
+      </fieldset>
+    </form>
+    <br></br>
   </div>
   <script src="js/app.js"></script>
-
-
 </body>
 
 </html>
