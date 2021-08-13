@@ -1,45 +1,48 @@
 html {
-    background-color:rgb(36, 40, 41);
+    background-color:rgb(29, 27, 27);
     color: black;
     line-height: 1.8;
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
+    
 }
+
 header{
     padding: 70px;
     font-size: 28px;
     color:white ;
     font-weight: bolder;
+    border-radius: 20px;
+    border-left: 100px;
+   
 }
 #headerh1{
     padding: 70px;
     font-size:40px;
+    margin: 50px 70px;
     color:white ;
     font-weight: bolder;
     text-align: center; 
-    background-color: rgb(197, 76, 63);
+    background-color: rgb(114, 43, 35);
+   
+
      
 }
-#salpic, img{
-    height: 300px;
-    width: 300px;
-    margin-left: 200px;
+
+div:after {
+   content: "";
+   clear: both;
+   display: table;
 }
 
-
-
-  div:after {
-    content: "";
-    clear: both;
-    display: table;
-  }
 #footerh2{
-    padding: 20px;
-    font-size:30px;
+    padding: 40px;
+    font-size:20px;
     color:white ;
     font-weight: bolder;
     text-align: center; 
-    background-color: rgb(197, 76, 63);
+    line-height: 1;
+    background-color: rgb(114, 43, 35);
     margin-top: 300px;
 }
 
@@ -49,13 +52,17 @@ header{
     border: 30px rgb(197, 76, 63);
     background-color: white;
     box-shadow: 7px 7px 14px 14px rgb(102, 100, 100);
+    margin-bottom: 100px;
+    border-collapse:inherit;
+	  border-spacing: 1px;
+    
   }
 
-    th, .locStyle {
-    padding: 20px;
-    background-color: rgb(197, 76, 63);
-    font-weight: bolder;
-    text-align: center;
+ th, .locStyle {
+ padding: 20px;
+ background-color: rgb(197, 76, 63);
+ font-weight: bolder;
+ text-align: center;
   }
   tr{
     padding: 20px;
@@ -101,9 +108,10 @@ main h2{
   
   .column {
     float: left;
-    width: 33.33%;
-    margin-left: 50px;
+    width: 150%;
+    margin-left: -30px;
     margin-top: 20px;
+    
   }
   
   
@@ -113,3 +121,77 @@ main h2{
     display: block;
   }
 
+
+form {
+  width:450px;
+	padding:30px;
+	margin:40px auto;
+	background: #FFF;
+	border-radius: 10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+
+form legend{
+  background: rgb(94, 136, 146);
+  padding: 30px;
+  width: 100%;
+  margin: -30px -30px 30px -30px;
+	color: rgb(255, 255, 255);
+	
+  text-align: center;
+  font-weight: bolder;
+}
+.button {
+  border-radius: 50px;
+  background-color: rgb(150, 52, 52);;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 20%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: -70px;
+  position: relative;
+  float: right;
+  margin-right: 50px;
+  text-decoration: none;
+  
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+main img{
+  width: 660px;
+  height: 330px;
+  margin-left: 600px;
+  border: 5px solid black;
+}
